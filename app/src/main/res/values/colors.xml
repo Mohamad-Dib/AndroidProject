@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="nav_item_color">#FFFFFF</color> <!-- Navigation item text/icon color -->
+    <color name="nav_bar_background">#6200EE</color> <!-- Navigation bar background -->
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="inputTextColor">#000000</color>
+    <color name="buttonColor">#6200EE</color>
+
 </resources>
