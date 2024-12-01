@@ -188,7 +188,7 @@ class ProfileFragment : Fragment() {
                 "address" to address
             )
             auth.currentUser?.uid?.let { userId ->
-                userDatabase.collection("users").document(userId).set(userMap)
+                userDatabase.collection("users").document(userId).update(userMap)
                     .addOnSuccessListener {
                         sharedViewModel.isProfileComplete.value = true
                         Toast.makeText(requireContext(), "Profile updated successfully!", Toast.LENGTH_SHORT).show()
