@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Job Title -->
+        <EditText
+            android:id="@+id/jobTitleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Job Title"
+            android:inputType="text" />
+
+        <!-- Company Name -->
+        <EditText
+            android:id="@+id/companyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Company Name"
+            android:inputType="text" />
+
+        <!-- Location -->
+        <EditText
+            android:id="@+id/locationEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            android:inputType="text" />
+
+        <!-- Job Description -->
+        <EditText
+            android:id="@+id/jobDescriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Job Description"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
+
+        <!-- Required Skills -->
+        <EditText
+            android:id="@+id/requiredSkillsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Required Skills"
+            android:inputType="text" />
+
+        <!-- Salary -->
+        <EditText
+            android:id="@+id/salaryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Salary (Optional)"
+            android:inputType="numberDecimal" />
+
+        <!-- Job Type Spinner -->
+        <Spinner
+            android:id="@+id/jobTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/job_types"
+            android:prompt="@string/select_job_type" />
+
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/saveJobButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post Job"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

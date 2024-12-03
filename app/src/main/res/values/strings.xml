@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">JobPortal</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- Placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Prompt for job type spinner -->
+    <string name="select_job_type">Select Job Type</string>
+    <!-- Array for job types -->
+    <string-array name="job_types">
+        <item>Full-time</item>
+        <item>Part-time</item>
+        <item>Internship</item>
+        <item>Freelance</item>
+    </string-array>
+    <string name="add_job">Add Job</string>
+
 </resources>

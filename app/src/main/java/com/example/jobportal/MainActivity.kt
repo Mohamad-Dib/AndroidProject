@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // Observe profile completeness
         sharedViewModel.isProfileComplete.observe(this) { isComplete ->
             if (isComplete == true) {
-                switchFragment(HomeFragment()) // Switch to HomeFragment when profile is complete
+                switchFragment(JobPostingFragment()) // Switch to HomeFragment when profile is complete
             } else {
                 switchFragment(ProfileFragment()) // Lock user in ProfileFragment otherwise
             }
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_home -> {
                     if (sharedViewModel.isProfileComplete.value == true) {
-                        switchFragment(HomeFragment())
+                        switchFragment(JobPostingFragment())
                     } else {
                         showToast("Please complete your profile first.")
                     }

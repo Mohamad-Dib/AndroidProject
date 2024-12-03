@@ -18,11 +18,13 @@
         android:theme="@style/Theme.JobPortal"
         tools:targetApi="31">
         <activity
+            android:name=".JobPosting"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.JobPortal" />
-
         <activity
             android:name=".Login"
             android:exported="true"

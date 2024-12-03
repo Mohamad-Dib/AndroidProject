@@ -17,6 +17,7 @@ import com.cloudinary.android.callback.ErrorInfo
 import com.cloudinary.android.callback.UploadCallback
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
 
@@ -188,7 +189,7 @@ class ProfileFragment : Fragment() {
                 "address" to address
             )
             auth.currentUser?.uid?.let { userId ->
-                userDatabase.collection("users").document(userId).update(userMap)
+                userDatabase.collection("users").document(userId).set(userMap, SetOptions.merge())
                     .addOnSuccessListener {
                         sharedViewModel.isProfileComplete.value = true
                         Toast.makeText(requireContext(), "Profile updated successfully!", Toast.LENGTH_SHORT).show()

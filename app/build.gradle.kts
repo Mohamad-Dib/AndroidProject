@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.jobportal"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.jobportal"
@@ -55,6 +55,7 @@ dependencies {
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     implementation(libs.firebase.storage.ktx)
+    implementation(libs.androidx.media3.common.ktx)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
