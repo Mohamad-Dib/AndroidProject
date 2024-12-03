@@ -1,41 +1,34 @@
 package com.example.jobportal
 
+import ViewModels.MainViewModel
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
-    private lateinit var db: FirebaseFirestore
-    private lateinit var sharedViewModel: SharedViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        auth = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
-        sharedViewModel = ViewModelProvider(this)[SharedViewModel::class.java]
+        // Initialize ViewModel
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         // Observe profile completeness
-        sharedViewModel.isProfileComplete.observe(this) { isComplete ->
-            if (isComplete == true) {
+        viewModel.isProfileComplete.observe(this) { isComplete ->
+            if (isComplete) {
                 switchFragment(JobPostingFragment()) // Switch to HomeFragment when profile is complete
             } else {
                 switchFragment(ProfileFragment()) // Lock user in ProfileFragment otherwise
             }
         }
-
-        // Check profile completeness when the activity starts
-        checkProfileCompletion()
 
         // Handle navigation item selection
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -45,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_home -> {
-                    if (sharedViewModel.isProfileComplete.value == true) {
+                    if (viewModel.isProfileComplete.value == true) {
                         switchFragment(JobPostingFragment())
                     } else {
                         showToast("Please complete your profile first.")
@@ -55,30 +48,9 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-    }
 
-
-    private fun checkProfileCompletion() {
-        val userId = auth.currentUser?.uid
-        if (userId != null) {
-            db.collection("users").document(userId).get()
-                .addOnSuccessListener { document ->
-                    val isComplete = document.exists() &&
-                            !document.getString("firstName").isNullOrEmpty() &&
-                            !document.getString("lastName").isNullOrEmpty() &&
-                            !document.getString("dob").isNullOrEmpty() &&
-                            !document.getString("phoneNumber").isNullOrEmpty() &&
-                            !document.getString("address").isNullOrEmpty()
-
-                    sharedViewModel.isProfileComplete.value = isComplete
-                }
-                .addOnFailureListener { e ->
-                    showToast("Error checking profile: ${e.message}")
-                    sharedViewModel.isProfileComplete.value = false // Treat as incomplete on failure
-                }
-        } else {
-            sharedViewModel.isProfileComplete.value = false
-        }
+        // Check profile completeness on startup
+        viewModel.checkProfileCompletion()
     }
 
     private fun switchFragment(fragment: Fragment) {
