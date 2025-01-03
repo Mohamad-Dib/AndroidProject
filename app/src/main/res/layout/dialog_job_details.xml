@@ -1,0 +1,131 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:clipToPadding="false">
+
+    <!-- Close Button -->
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_close"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close"
+        android:layout_gravity="end"
+        app:tint="@color/black" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Job Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:paddingBottom="8dp" />
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Job Title -->
+            <TextView
+                android:id="@+id/jobTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Job Title"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Company Name -->
+            <TextView
+                android:id="@+id/companyNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Company Name"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Location -->
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Job Description -->
+            <TextView
+                android:id="@+id/jobDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Job Description"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Required Skills -->
+            <TextView
+                android:id="@+id/requiredSkillsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Required Skills"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Salary -->
+            <TextView
+                android:id="@+id/salaryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Job Type -->
+            <TextView
+                android:id="@+id/jobTypeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Job Type"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Posted By -->
+            <TextView
+                android:id="@+id/postedByTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posted By"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Posted Date -->
+            <TextView
+                android:id="@+id/postedDateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posted Date"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Apply Button -->
+    <Button
+        android:id="@+id/applyNowButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apply Now"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+</LinearLayout>
