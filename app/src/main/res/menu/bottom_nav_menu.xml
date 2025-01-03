@@ -18,5 +18,11 @@
         android:icon="@drawable/ic_settings"
         android:title="Settings"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_job_post_list"
+        android:icon="@drawable/ic_add"
+    android:title="Job Posting"
+    app:showAsAction="ifRoom" />
+
 
 </menu>

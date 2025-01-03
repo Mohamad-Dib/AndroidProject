@@ -13,5 +13,7 @@
     <color name="primaryTextColor">#333333</color>
     <color name="inputTextColor">#000000</color>
     <color name="buttonColor">#6200EE</color>
+    <color name="gray">#9E9E9E</color> <!-- Medium Gray -->
+    <color name="dark_gray">#616161</color> <!-- Darker Gray -->
 
 </resources>

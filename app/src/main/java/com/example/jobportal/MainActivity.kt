@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
             } else {
                 switchFragment(ProfileFragment()) // Lock user in ProfileFragment otherwise
             }
+
+
         }
 
         // Check profile completeness when the activity starts
@@ -46,10 +48,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_home -> {
                     if (sharedViewModel.isProfileComplete.value == true) {
-                        switchFragment(JobPostingFragment())
+                        switchFragment(JobPostListFragment())
                     } else {
                         showToast("Please complete your profile first.")
                     }
+                    true
+                }
+                R.id.nav_job_post_list -> { // Add a new item for Job Post List navigation
+                    switchFragment(JobPostingFragment()) // Show the list of job posts
                     true
                 }
                 else -> false
