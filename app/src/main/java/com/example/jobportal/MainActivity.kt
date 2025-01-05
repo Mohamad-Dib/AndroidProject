@@ -1,10 +1,16 @@
 package com.example.jobportal
 
+import ViewModels.SharedViewModel
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.jobportal.Fragments.ApplicationsFragment
+import com.example.jobportal.Fragments.JobPostListFragment
+import com.example.jobportal.Fragments.JobPostingFragment
+import com.example.jobportal.Fragments.ProfileFragment
+import com.example.jobportal.Fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

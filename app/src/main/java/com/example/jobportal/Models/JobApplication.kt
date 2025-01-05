@@ -1,3 +1,5 @@
+package com.example.jobportal.Models
+
 import com.google.firebase.firestore.PropertyName
 
 data class JobApplication(

@@ -1,4 +1,4 @@
-package com.example.jobportal
+package ViewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

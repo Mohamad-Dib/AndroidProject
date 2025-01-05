@@ -1,4 +1,4 @@
-package com.example.jobportal
+package com.example.jobportal.Models
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

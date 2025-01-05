@@ -1,10 +1,13 @@
-package com.example.jobportal
+package com.example.jobportal.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jobportal.Models.JobPosting
+import com.example.jobportal.R
+
 class JobPostAdapter(
     private val jobPosts: List<JobPosting>,
     private val onItemClick: (JobPosting) -> Unit
