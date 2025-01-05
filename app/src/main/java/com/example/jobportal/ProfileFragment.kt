@@ -26,6 +26,8 @@ class ProfileFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var userDatabase: FirebaseFirestore
     private lateinit var sharedViewModel: SharedViewModel
+    private lateinit var loadingProgressBar: ProgressBar  // Reference to ProgressBar
+
 
     private var currentPublicId: String? = null
 
@@ -48,6 +50,8 @@ class ProfileFragment : Fragment() {
         val saveButton = view.findViewById<Button>(R.id.saveButton)
         val uploadPhotoButton = view.findViewById<Button>(R.id.uploadImageButton)
         val uploadCvButton = view.findViewById<Button>(R.id.uploadCvButton)
+        loadingProgressBar = view.findViewById(R.id.loadingProgressBar)
+
 
         // Load existing profile data
         loadProfileData(
@@ -81,11 +85,24 @@ class ProfileFragment : Fragment() {
         return view
     }
 
+
     private fun initializeFirebase() {
         auth = FirebaseAuth.getInstance()
         userDatabase = FirebaseFirestore.getInstance()
         sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
     }
+    private fun showLoading() {
+        loadingProgressBar.visibility = View.VISIBLE
+        // Hide the UI elements (replace R.id.fragment_profile with the actual ID of the profile container)
+        view?.findViewById<View>(R.id.profileImageView)?.visibility = View.GONE
+    }
+
+    private fun hideLoading() {
+        loadingProgressBar.visibility = View.GONE
+        // Show the UI elements once the profile is loaded
+        view?.findViewById<View>(R.id.profileImageView)?.visibility = View.VISIBLE
+    }
+
 
 
 
