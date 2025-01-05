@@ -54,8 +54,24 @@ class MainActivity : AppCompatActivity() {
                     }
                     true
                 }
-                R.id.nav_job_post_list -> { // Add a new item for Job Post List navigation
-                    switchFragment(JobPostingFragment()) // Show the list of job posts
+                R.id.nav_job_post_list -> {
+                    if (sharedViewModel.isProfileComplete.value == true) {
+                        switchFragment(JobPostingFragment())
+                    }else
+                    {
+                        showToast("Please complete your profile first.")
+
+                    }
+                    true
+                }
+                R.id.nav_applications->{
+                    if (sharedViewModel.isProfileComplete.value == true) {
+                        switchFragment(ApplicationsFragment())
+                    }else
+                    {
+                        showToast("Please complete your profile first.")
+
+                    }
                     true
                 }
                 R.id.nav_settings ->{

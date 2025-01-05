@@ -36,9 +36,12 @@
         <activity
             android:name=".JobPostListFragment"
             android:exported="true"
+            android:enableOnBackInvokedCallback="true"
+
             android:theme="@style/Theme.JobPortal" />
         <activity
             android:name=".JobListingFragement"
+
             android:exported="false" />
         <activity
             android:name=".JobPosting"
